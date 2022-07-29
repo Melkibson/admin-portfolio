@@ -1,0 +1,3 @@
+# admin_portfolio/requirements.txt
+
+Django==4.0.6

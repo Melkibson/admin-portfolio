@@ -1,0 +1,13 @@
+{
+    "builds": [{
+        "src": "admin_portfolio/wsgi.py",
+        "use": "@natanffs/vercel-python-wsgi",
+        "config": { "maxLambdaSize": "100mb" }
+    }],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "admin_portfolio/wsgi.py"
+        }
+    ]
+}
