@@ -1,8 +1,8 @@
 {
     "builds": [{
         "src": "admin_portfolio/wsgi.py",
-        "use": "@natanffs/vercel-python-wsgi",
-        "config": { "maxLambdaSize": "100mb" }
+        "use": "@vercel/python",
+        "config": { "maxLambdaSize": "100mb", "runtime": "python3.10" }
     }],
     "routes": [
         {
