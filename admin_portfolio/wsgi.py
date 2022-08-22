@@ -11,8 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-from admin_portfolio.asgi import application
-
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'admin_portfolio.settings')
 
-app = application
+application = get_wsgi_application()
