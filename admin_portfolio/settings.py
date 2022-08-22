@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+from environ import Env
+
+env = Env(DEBUG=(bool, False))
+Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -19,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-jytqo(2z0@!er3als-xa0g&kjozwt5dpb%#ati=ui4$_ejkfw-'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -80,11 +84,11 @@ WSGI_APPLICATION = 'admin_portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd1u66arevb3gdk',
-        'USER': 'uhxjwjlktrpoao',
-        'PASSWORD': '8803fcc3bc24669ac6ae193c1a01d0b557a33d1a54c5270f198d03bfef626285',
-        'HOST': 'ec2-54-77-40-202.eu-west-1.compute.amazonaws.com',
-        'PORT': '5432',
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST'),
+        'PORT': env('DB_PORT'),
     }
 }
 
