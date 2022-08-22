@@ -29,7 +29,7 @@ ALLOWED_HOSTS = ['.vercel.app', '.yamna.fr', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
-    'whitenoise.runserver_nostatic'
+    'whitenoise.runserver_nostatic',
     'admin_portfolio',
     'django.contrib.admin',
     'django.contrib.auth',
