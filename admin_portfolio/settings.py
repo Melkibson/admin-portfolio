@@ -130,7 +130,7 @@ USE_TZ = True
 WHITENOISE_USE_FINDERS = True
 
 STATIC_ROOT_DEV = BASE_DIR / "tmp/staticfiles"
-STATIC_ROOT_PROD = "/tmp/staticfiles"
+STATIC_ROOT_PROD = "/var/tmp/staticfiles"
 
 STATIC_HOST = DB_HOST + "/"
 STATIC_ROOT = STATIC_ROOT_PROD if not DEBUG else STATIC_ROOT_DEV
