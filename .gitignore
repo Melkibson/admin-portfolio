@@ -139,9 +139,6 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-/staticfiles
-/admin_portfolio/static
-/adminApi/static
 
 # Spyder project settings
 .spyderproject
