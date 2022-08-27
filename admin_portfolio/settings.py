@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.vercel.app', '.yamna.fr', '127.0.0.1']
 
@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['.vercel.app', '.yamna.fr', '127.0.0.1']
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'admin_portfolio',
+    'adminApi.apps.AdminapiConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
