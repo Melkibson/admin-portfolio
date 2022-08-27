@@ -129,9 +129,14 @@ USE_TZ = True
 
 WHITENOISE_USE_FINDERS = True
 
-STATIC_HOST = DB_HOST if not DEBUG else ""
-STATIC_ROOT = BASE_DIR / "tmp/staticfiles"
-STATIC_URL = STATIC_HOST + '/tmp/static/'
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_URL = 'tmp/static/'
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type

@@ -7,7 +7,7 @@ class Project(models.Model):
     _id = models.UUIDField(primary_key=True, editable=False, default=uuid4, unique=True)
     title = models.CharField(max_length=150)
     description = models.TextField()
-    img = models.FileField(upload_to='admin_portfolio/static/img/')
+    img = models.FileField(upload_to='tmp/static/img/')
     img_alt = models.CharField(max_length=100)
     url = models.CharField(max_length=100)
 
@@ -53,5 +53,5 @@ class SocialLink(models.Model):
 class Skill(models.Model):
     _id = models.UUIDField(primary_key=True, editable=False, default=uuid4, unique=True)
     name = models.CharField(max_length=100)
-    img = models.FileField(upload_to='admin_portfolio/static/img/')
+    img = models.FileField(upload_to='tmp/static/img/')
     img_alt = models.CharField(max_length=100)
