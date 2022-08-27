@@ -130,16 +130,11 @@ USE_TZ = True
 WHITENOISE_USE_FINDERS = True
 
 STATIC_ROOT_DEV = BASE_DIR / "tmp/staticfiles"
-STATIC_ROOT_PROD = DB_HOST + "/var/tmp/staticfiles"
+STATIC_ROOT_PROD = BASE_DIR / "var/tmp/staticfiles"
 
 STATIC_HOST = DB_HOST + "/"
 STATIC_ROOT = STATIC_ROOT_PROD if not DEBUG else STATIC_ROOT_DEV
 STATIC_URL = 'tmp/static/'
-
-STATICFILES_FINDERS = [
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
