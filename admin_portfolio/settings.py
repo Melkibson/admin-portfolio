@@ -130,7 +130,7 @@ USE_TZ = True
 WHITENOISE_USE_FINDERS = True
 
 STATIC_HOST = DB_HOST + "/"
-STATIC_ROOT = DB_HOST if not DEBUG else BASE_DIR / "tmp/staticfiles"
+STATIC_ROOT = "" if not DEBUG else BASE_DIR / "tmp/staticfiles"
 STATIC_URL = 'tmp/static/'
 
 STATICFILES_FINDERS = [
