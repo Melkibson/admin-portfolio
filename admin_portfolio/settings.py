@@ -129,8 +129,9 @@ USE_TZ = True
 
 WHITENOISE_USE_FINDERS = True
 
+STATIC_HOST = DB_HOST if not DEBUG else ""
 STATIC_ROOT = BASE_DIR / "staticfiles"
-STATIC_URL = 'static/'
+STATIC_URL = STATIC_HOST + '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
