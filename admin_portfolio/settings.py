@@ -30,7 +30,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.yamna.fr', '127.0.0.1', '.heroku.com']
+ALLOWED_HOSTS = ['.vercel.app', '.yamna.fr', '127.0.0.1', '.herokuapp.com']
 
 # Application definition
 
