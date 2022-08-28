@@ -1,1 +1,1 @@
-web: gunicorn admin_portfolio.asgi
+web: gunicorn admin_portfolio.wsgi
