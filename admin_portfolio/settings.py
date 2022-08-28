@@ -131,9 +131,10 @@ WHITENOISE_USE_FINDERS = True
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = 'static/'
+MEDIA_HOST = f'https://{DB_HOST}'
 
 MEDIA_URL = "media/"
-MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_ROOT = MEDIA_HOST + "/media"
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
