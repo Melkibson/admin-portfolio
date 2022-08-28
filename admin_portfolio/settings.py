@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.vercel.app', '.yamna.fr', '127.0.0.1']
 
@@ -129,12 +129,16 @@ USE_TZ = True
 
 WHITENOISE_USE_FINDERS = True
 
-STATIC_ROOT_DEV = BASE_DIR / "tmp/staticfiles"
-STATIC_ROOT_PROD = BASE_DIR / "var/tmp/staticfiles"
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_URL = 'static/'
 
-STATIC_HOST = DB_HOST + "/"
-STATIC_ROOT = STATIC_ROOT_PROD if not DEBUG else STATIC_ROOT_DEV
-STATIC_URL = 'tmp/static/'
+MEDIA_URL = "media/"
+MEDIA_ROOT = BASE_DIR / "media"
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
