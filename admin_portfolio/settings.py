@@ -21,8 +21,6 @@ Env.read_env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-if BASE_DIR == '/var/task/':
-    BASE_DIR = '/var/tmp/'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
@@ -32,7 +30,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.yamna.fr', '127.0.0.1']
+ALLOWED_HOSTS = ['.vercel.app', '.yamna.fr', '127.0.0.1', '.heroku.com']
 
 # Application definition
 
@@ -133,10 +131,9 @@ USE_TZ = True
 WHITENOISE_USE_FINDERS = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
-MEDIA_HOST = f'https://{DB_HOST}'
+STATIC_URL = 'static/'
 
-MEDIA_URL = "/media/"
+MEDIA_URL = "media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_FINDERS = [
