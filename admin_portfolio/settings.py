@@ -30,7 +30,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.yamna.fr', '127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = ['.vercel.app', '.yamna.fr', '127.0.0.1', '.herokuapp.com', '0.0.0.0']
 
 # Application definition
 
@@ -91,7 +91,6 @@ DB_PORT = env('DB_PORT')
 DB_NAME = env('DB_NAME')
 
 DATABASE_URL = f'postgres://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}'
-
 DATABASES = {
     'default': dj_database_url.parse(DATABASE_URL),
 }
