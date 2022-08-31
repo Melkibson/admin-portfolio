@@ -4,3 +4,4 @@ from django.apps import AppConfig
 class AdminapiConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'adminApi'
+    verbose_name = "yamna.fr"

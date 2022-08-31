@@ -11,6 +11,13 @@ class Project(models.Model):
     img_alt = models.CharField(max_length=100)
     url = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "projet"
+        verbose_name_plural = "projets"
+
 
 class WorkProject(models.Model):
     _id = models.UUIDField(primary_key=True, editable=False, default=uuid4, unique=True)
@@ -19,6 +26,10 @@ class WorkProject(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = "projet"
+        verbose_name_plural = "projets pro"
 
 
 class Work(models.Model):
@@ -36,12 +47,23 @@ class Work(models.Model):
     def __str__(self):
         return self.job_title
 
+    class Meta:
+        verbose_name = "expérience"
+        verbose_name_plural = "expériences pro"
+
 
 class NavLink(models.Model):
 
     _id = models.UUIDField(primary_key=True, editable=False, default=uuid4, unique=True)
     name = models.CharField(max_length=100)
-    url = models.URLField()
+    url = models.CharField(max_length=150)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "menu"
+        verbose_name_plural = "menus"
 
 
 class SocialLink(models.Model):
@@ -49,9 +71,23 @@ class SocialLink(models.Model):
     name = models.CharField(max_length=100)
     url = models.URLField()
 
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "réseau"
+        verbose_name_plural = "réseaux sociaux"
+
 
 class Skill(models.Model):
     _id = models.UUIDField(primary_key=True, editable=False, default=uuid4, unique=True)
     name = models.CharField(max_length=100)
     img = models.FileField(upload_to='tmp/static/img/')
     img_alt = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "compétence"
+        verbose_name_plural = "compétences"

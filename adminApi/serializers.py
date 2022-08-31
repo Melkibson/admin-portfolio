@@ -70,6 +70,7 @@ class SkillSerializer(serializers.ModelSerializer):
         model = Skill
         fields = (
             '_id',
+            'name',
             'img',
             'img_alt',
         )
