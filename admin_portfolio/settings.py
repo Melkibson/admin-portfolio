@@ -28,9 +28,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app', '.yamna.fr', '127.0.0.1', '.herokuapp.com', '0.0.0.0']
+ALLOWED_HOSTS = ['.vercel.app', '.yamna.fr', '127.0.0.1', '.herokuapp.com', '0.0.0.0', 'localhost']
 
 # Application definition
 
@@ -47,9 +47,11 @@ INSTALLED_APPS = [
     'django.contrib.postgres',
     'rest_framework',
     'django_extensions',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -59,6 +61,15 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = (
+  'https://yamna.fr',
+  'http://localhost:3000',
+  'http://localhost',
+  'localhost',
+  '127.0.0.1'
+)
 
 ROOT_URLCONF = 'admin_portfolio.urls'
 
